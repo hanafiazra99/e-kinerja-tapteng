@@ -1,0 +1,64 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+    #TPP#
+	#Beranda
+	RewriteRule ^$ pages/beranda/index.php [L]
+	RewriteRule ^/$ pages/beranda/index.php [L]
+	RewriteRule ^beranda$ pages/beranda/index.php [L]
+	RewriteRule ^beranda/$ pages/beranda/index.php [L]
+
+    #OPD
+    RewriteRule ^opd$ pages/opd/index.php [L]
+	RewriteRule ^opd/$ pages/opd/index.php [L]
+    RewriteRule ^opd/([A-Za-z0-9-]+)$ pages/opd/detail.php?key1=$1 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/$ pages/opd/detail.php?key1=$1 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ pages/opd/besaran-tpp_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ pages/opd/besaran-tpp_detail.php?key1=$1&&key2=$2 [L]
+    RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/sunting$ pages/opd/besaran-tpp_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/sunting/$ pages/opd/besaran-tpp_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/tugas-tambahan/tambah$ pages/opd/tugas-tambahan_tambah.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/tugas-tambahan/tambah/$ pages/opd/tugas-tambahan_tambah.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/tugas-tambahan/([A-Za-z0-9-]+)/sunting$ pages/opd/tugas-tambahan_sunting.php?key1=$1&&key2=$2&&key3=$3 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/tugas-tambahan/([A-Za-z0-9-]+)/sunting/$ pages/opd/tugas-tambahan_sunting.php?key1=$1&&key2=$2&&key3=$3 [L]
+
+	#Besaran TPP
+    RewriteRule ^besaran-tpp$ pages/besaran-tpp/index.php [L]
+	RewriteRule ^besaran-tpp/$ pages/besaran-tpp/index.php [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)$ pages/besaran-tpp/detail.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/$ pages/besaran-tpp/detail.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/sunting$ pages/besaran-tpp/sunting.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/sunting/$ pages/besaran-tpp/sunting.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/tugas-tambahan/tambah$ pages/besaran-tpp/tugas-tambahan_tambah.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/tugas-tambahan/tambah/$ pages/besaran-tpp/tugas-tambahan_tambah.php?key1=$1 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/tugas-tambahan/([A-Za-z0-9-]+)/sunting$ pages/besaran-tpp/tugas-tambahan_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^besaran-tpp/([A-Za-z0-9-]+)/tugas-tambahan/([A-Za-z0-9-]+)/sunting/$ pages/besaran-tpp/tugas-tambahan_sunting.php?key1=$1&&key2=$2 [L]
+
+	#Perhitungan TPP
+    RewriteRule ^perhitungan-tpp$ pages/perhitungan-tpp/index.php [L]
+	RewriteRule ^perhitungan-tpp/$ pages/perhitungan-tpp/index.php [L]
+
+	#Riwayat Pembayaran
+    RewriteRule ^riwayat-pembayaran$ pages/riwayat-pembayaran/index.php [L]
+	RewriteRule ^riwayat-pembayaran/$ pages/riwayat-pembayaran/index.php [L]
+
+	#Pengaturan
+    RewriteRule ^pengaturan$ pages/pengaturan/index.php [L]
+	RewriteRule ^pengaturan/$ pages/pengaturan/index.php [L]
+	RewriteRule ^pengaturan/persentase/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_persentase_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/persentase/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_persentase_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-penilaian-sasaran-kerja/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_penilaian_sasaran_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-penilaian-sasaran-kerja/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_penilaian_sasaran_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-waktu-sasaran-kerja/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_ketepatan_waktu_sasaran_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-waktu-sasaran-kerja/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_ketepatan_waktu_sasaran_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-masuk-kerja/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_ketepatan_masuk_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-masuk-kerja/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_ketepatan_masuk_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-pulang-kerja/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_ketepatan_pulang_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-ketepatan-pulang-kerja/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_ketepatan_pulang_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-hukuman-disiplin/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_hukuman_disiplin_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-hukuman-disiplin/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_hukuman_disiplin_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-tidak-hadir-kerja/([0-9-]+)/sunting$ pages/pengaturan/pengaturan_indikator_tidak_hadir_kerja_sunting.php?key1=$1 [L]
+	RewriteRule ^pengaturan/indikator-tidak-hadir-kerja/([0-9-]+)/sunting/$ pages/pengaturan/pengaturan_indikator_tidak_hadir_kerja_sunting.php?key1=$1 [L]
+
+	#Options All -Indexes
+</IfModule>

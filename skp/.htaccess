@@ -1,0 +1,86 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+    #SKP#
+	#Beranda
+	RewriteRule ^$ pages/beranda/index.php [L]
+	RewriteRule ^/$ pages/beranda/index.php [L]
+	RewriteRule ^beranda$ pages/beranda/index.php [L]
+	RewriteRule ^beranda/$ pages/beranda/index.php [L]
+
+    #OPD
+    RewriteRule ^opd$ pages/opd/index.php [L]
+	RewriteRule ^opd/$ pages/opd/index.php [L]
+    RewriteRule ^opd/([A-Za-z0-9-]+)$ pages/opd/detail.php?key1=$1 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/$ pages/opd/detail.php?key1=$1 [L]
+    RewriteRule ^opd/([A-Za-z0-9-]+)/tupoksi/tambah$ pages/opd/tupoksi_tambah.php?key1=$1 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/tupoksi/tambah/$ pages/opd/tupoksi_tambah.php?key1=$1 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/tupoksi/([A-Za-z0-9-]+)/sunting$ pages/opd/tupoksi_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^opd/([A-Za-z0-9-]+)/tupoksi/([A-Za-z0-9-]+)/sunting/$ pages/opd/tupoksi_sunting.php?key1=$1&&key2=$2 [L]
+
+	#Tupoksi
+    RewriteRule ^tupoksi$ pages/tupoksi/index.php [L]
+	RewriteRule ^tupoksi/$ pages/tupoksi/index.php [L]
+	RewriteRule ^tupoksi/tambah$ pages/tupoksi/tambah.php [L]
+	RewriteRule ^tupoksi/tambah/$ pages/tupoksi/tambah.php [L]
+	RewriteRule ^tupoksi/([A-Za-z0-9-]+)/sunting$ pages/tupoksi/sunting.php?key1=$1 [L]
+	RewriteRule ^tupoksi/([A-Za-z0-9-]+)/sunting/$ pages/tupoksi/sunting.php?key1=$1 [L]
+
+	#Sasaran
+	RewriteRule ^sasaran$ pages/sasaran/index.php [L]
+	RewriteRule ^sasaran/$ pages/sasaran/index.php [L]
+	RewriteRule ^sasaran/tambah$ pages/sasaran/tambah.php [L]
+	RewriteRule ^sasaran/tambah/$ pages/sasaran/tambah.php [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)$ pages/sasaran/detail.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/$ pages/sasaran/detail.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/export-excel$ pages/sasaran/export-excel.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/export-excel/$ pages/sasaran/export-excel.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/tambah$ pages/sasaran/kegiatan_tambah.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/tambah/$ pages/sasaran/kegiatan_tambah.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)$ pages/sasaran/kegiatan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/$ pages/sasaran/kegiatan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/sunting$ pages/sasaran/kegiatan_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/sunting/$ pages/sasaran/kegiatan_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/tambah$ pages/sasaran/bulanan_tambah.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/tambah/$ pages/sasaran/bulanan_tambah.php?key1=$1 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)$ pages/sasaran/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/$ pages/sasaran/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/export-excel$ pages/sasaran/bulanan_export_excel.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/export-excel/$ pages/sasaran/bulanan_export_excel.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/sunting$ pages/sasaran/bulanan_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/sunting/$ pages/sasaran/bulanan_sunting.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/tambah$ pages/sasaran/bulanan_kegiatan_tambah.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/tambah/$ pages/sasaran/bulanan_kegiatan_tambah.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)$ pages/sasaran/bulanan_kegiatan_detail.php?key1=$1&&key2=$2&&key3=$3 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/$ pages/sasaran/bulanan_kegiatan_detail.php?key1=$1&&key2=$2&&key3=$3 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/sunting$ pages/sasaran/bulanan_kegiatan_sunting.php?key1=$1&&key2=$2&&key3=$3 [L]
+	RewriteRule ^sasaran/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/kegiatan/([A-Za-z0-9-]+)/sunting/$ pages/sasaran/bulanan_kegiatan_sunting.php?key1=$1&&key2=$2&&key3=$3 [L]
+
+	#Penilaian
+	RewriteRule ^penilaian$ pages/penilaian/index.php [L]
+	RewriteRule ^penilaian/$ pages/penilaian/index.php [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)$ pages/penilaian/detail.php?key1=$1 [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)/$ pages/penilaian/detail.php?key1=$1 [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)$ pages/penilaian/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/$ pages/penilaian/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/export-excel$ pages/penilaian/bulanan_export-excel.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^penilaian/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/export-excel/$ pages/penilaian/bulanan_export-excel.php?key1=$1&&key2=$2 [L]
+
+	#Sasaran Bawahan
+	RewriteRule ^sasaran-bawahan$ pages/sasaran-bawahan/index.php [L]
+	RewriteRule ^sasaran-bawahan/$ pages/sasaran-bawahan/index.php [L]
+	RewriteRule ^sasaran-bawahan/([A-Za-z0-9-]+)$ pages/sasaran-bawahan/detail.php?key1=$1 [L]
+	RewriteRule ^sasaran-bawahan/([A-Za-z0-9-]+)/$ pages/sasaran-bawahan/detail.php?key1=$1 [L]
+	RewriteRule ^sasaran-bawahan/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)$ pages/sasaran-bawahan/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^sasaran-bawahan/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/$ pages/sasaran-bawahan/bulanan_detail.php?key1=$1&&key2=$2 [L]
+
+	#Penilaian
+	RewriteRule ^penilaian-bawahan$ pages/penilaian-bawahan/index.php [L]
+	RewriteRule ^penilaian-bawahan/$ pages/penilaian-bawahan/index.php [L]
+	RewriteRule ^penilaian-bawahan/([A-Za-z0-9-]+)$ pages/penilaian-bawahan/detail.php?key1=$1 [L]
+	RewriteRule ^penilaian-bawahan/([A-Za-z0-9-]+)/$ pages/penilaian-bawahan/detail.php?key1=$1 [L]
+	RewriteRule ^penilaian-bawahan/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)$ pages/penilaian-bawahan/bulanan_detail.php?key1=$1&&key2=$2 [L]
+	RewriteRule ^penilaian-bawahan/([A-Za-z0-9-]+)/bulanan/([A-Za-z0-9-]+)/$ pages/penilaian-bawahan/bulanan_detail.php?key1=$1&&key2=$2 [L]
+
+	#Options All -Indexes
+</IfModule>

@@ -1,0 +1,145 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+	
+
+	#Beranda
+
+	RewriteRule ^$ pages/beranda/index.php [L]
+
+	RewriteRule ^/$ pages/beranda/index.php [L]
+
+	RewriteRule ^beranda$ pages/beranda/index.php [L]
+
+	RewriteRule ^beranda/$ pages/beranda/index.php [L]
+
+
+
+	#Kalender Kerja
+
+	RewriteRule ^kalender-kerja$ pages/kalender-kerja/index.php [L]
+
+	RewriteRule ^kalender-kerja/$ pages/kalender-kerja/index.php [L]
+
+	#Shift Pegawai
+
+	RewriteRule ^shift-pegawai$ pages/shift-pegawai/index.php [L]
+
+	RewriteRule ^shift-pegawai/$ pages/shift-pegawai/index.php [L]
+
+	RewriteRule ^shift-pegawai/tambah$ pages/shift-pegawai/tambah.php [L]
+
+	RewriteRule ^shift-pegawai/tambah/$ pages/shift-pegawai/tambah.php [L]
+
+
+	#Cuti
+
+	RewriteRule ^laporan/rekap-cuti$ pages/cuti/index.php [L]
+
+	RewriteRule ^laporan/rekap-cuti/$ pages/cuti/index.php [L]
+
+	RewriteRule ^form/cuti$ pages/cuti/tambah.php [L]
+
+	RewriteRule ^form/cuti/$ pages/cuti/tambah.php [L]
+
+
+	#Izin
+
+	RewriteRule ^form/izin$ pages/izin/tambah.php [L]
+
+	RewriteRule ^form/izin/$ pages/izin/tambah.php [L]
+
+	#Tugas Luar
+
+	RewriteRule ^form/tugas-luar$ pages/tugas-luar/tambah.php [L]
+
+	RewriteRule ^form/tugas-luar/$ pages/tugas-luar/tambah.php [L]
+
+	
+	
+
+	#Data Absen
+
+	RewriteRule ^data-absen$ pages/data-absen/index.php [L]
+
+	RewriteRule ^data-absen/$ pages/data-absen/index.php [L]
+
+  	RewriteRule ^data-absen/data-absen-xls$ pages/data-absen/data-absen-xls.php [L]
+
+  	RewriteRule ^data-absen/data-absen-xls/$ pages/data-absen/data-absen-xls.php [L]
+
+	RewriteRule ^data-absen/([A-Za-z0-9-]+)$ pages/data-absen/detail.php?key1=$1 [L]
+
+	RewriteRule ^data-absen/([A-Za-z0-9-]+)/$ pages/data-absen/detail.php?key1=$1 [L]
+
+
+
+	#Jadwal
+	RewriteRule ^jadwal$ pages/jadwal/index.php [L]
+	RewriteRule ^jadwal/$ pages/jadwal/index.php [L]
+	RewriteRule ^jadwal/jam-kerja$ pages/jadwal/jam-kerja/index.php [L]
+	RewriteRule ^jadwal/jam-kerja/$ pages/jadwal/jam-kerja/index.php [L]
+	RewriteRule ^jadwal/jam-pulang$ pages/jadwal/jam-pulang/index.php [L]
+	RewriteRule ^jadwal/jam-pulang/$ pages/jadwal/jam-pulang/index.php [L]
+	RewriteRule ^jadwal/shift$ pages/jadwal/shift/index.php [L]
+	RewriteRule ^jadwal/shift/$ pages/jadwal/shift/index.php [L]
+	RewriteRule ^jadwal/jam-kerja/([A-Za-z0-9-]+)/sunting$ pages/jadwal/jam-kerja/jam-kerja-ubah.php?key1=$1 [L]
+	RewriteRule ^jadwal/jam-kerja/([A-Za-z0-9-]+)/sunting/$ pages/jadwal/jam-kerja/jam-kerja-ubah.php?key1=$1 [L]
+	RewriteRule ^jadwal/hari-libur$ pages/jadwal/hari-libur/index.php [L]
+	RewriteRule ^jadwal/hari-libur/$ pages/jadwal/hari-libur/index.php [L]
+	RewriteRule ^jadwal/hari-libur/tambah$ pages/jadwal/hari-libur/tambah.php [L]
+	RewriteRule ^jadwal/hari-libur/tambah/$ pages/jadwal/hari-libur/tambah.php [L]
+
+	RewriteRule ^jadwal/hari-libur/([A-Za-z0-9-]+)/sunting$ pages/jadwal/hari-libur/hari-libur-ubah.php?key1=$1 [L]
+	RewriteRule ^jadwal/hari-libur/([A-Za-z0-9-]+)/sunting/$ pages/jadwal/hari-libur/hari-libur-ubah.php?key1=$1 [L]
+
+	
+
+	#Laporan
+
+	RewriteRule ^laporan/rekap-izin$ pages/laporan/izin-index.php [L]
+
+	RewriteRule ^laporan/rekap-izin/$ pages/laporan/izin-index.php [L]
+
+	RewriteRule ^laporan/rekap-cuti$ pages/laporan/cuti-index.php [L]
+
+	RewriteRule ^laporan/rekap-cuti/$ pages/laporan/cuti-index.php [L]
+
+	RewriteRule ^laporan/rekap-jadwal$ pages/laporan/jadwal-index.php [L]
+
+	RewriteRule ^laporan/rekap-jadwal/$ pages/laporan/jadwal-index.php [L]
+
+	RewriteRule ^laporan/rekap-tugas-luar$ pages/laporan/tugas-index.php [L]
+
+	RewriteRule ^laporan/rekap-tugas-luar/$ pages/laporan/tugas-index.php [L]
+
+	RewriteRule ^laporan/rekap-izin/([A-Za-z0-9-]+)$ pages/laporan/izin-detail.php?key1=$1 [L]
+
+	RewriteRule ^laporan/rekap-izin/([A-Za-z0-9-]+)/$ pages/laporan/izin-detail.php?key1=$1 [L]
+
+	RewriteRule ^laporan/rekap-bulanan$ pages/laporan/bulanan-index.php [L]
+
+	RewriteRule ^laporan/rekap-bulanan/$ pages/laporan/bulanan-index.php [L]
+
+	RewriteRule ^laporan/rekap-bulanan/excel$ pages/laporan/export-excel.php [L]
+
+	RewriteRule ^laporan/rekap-bulanan/excel/$ pages/laporan/export-excel.php [L]
+
+	RewriteRule ^laporan/rekap-bulanan/([A-Za-z0-9-]+)$ pages/laporan/bulanan-detail.php?key1=$1 [L]
+
+	RewriteRule ^laporan/rekap-bulanan/([A-Za-z0-9-]+)/$ pages/laporan/bulanan-detail.php?key1=$1 [L]
+
+	RewriteRule ^laporan/rekap-sakit$ pages/laporan/sakit-index.php [L]
+
+	RewriteRule ^laporan/rekap-sakit/$ pages/laporan/sakit-index.php [L]
+
+	RewriteRule ^laporan/rekap-sakit/([A-Za-z0-9-]+)$ pages/laporan/sakit-detail.php?key1=$1 [L]
+
+	RewriteRule ^laporan/rekap-sakit/([A-Za-z0-9-]+)/$ pages/laporan/sakit-detail.php?key1=$1 [L]
+
+
+
+	#Options All -Indexes
+
+</IfModule>

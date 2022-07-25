@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+    #E-Kinerja#
+	#Beranda
+	RewriteRule ^$ ekinerja/pages/beranda/index.php [L]
+	RewriteRule ^/$ ekinerja/pages/beranda/index.php [L]
+	RewriteRule ^beranda$ ekinerja/pages/beranda/index.php [L]
+	RewriteRule ^beranda/$ ekinerja/pages/beranda/index.php [L]
+
+	#Akun
+	RewriteRule ^akun/user$ ekinerja/pages/akun/user_index.php [L]
+	RewriteRule ^akun/user/$ ekinerja/pages/akun/user_index.php [L]
+	RewriteRule ^akun/user/tambah$ ekinerja/pages/akun/user_tambah.php [L]
+	RewriteRule ^akun/user/tambah/$ ekinerja/pages/akun/user_tambah.php [L]
+	RewriteRule ^akun/user/([A-Za-z0-9-]+)/sunting$ ekinerja/pages/akun/user_sunting.php?key1=$1 [L]
+	RewriteRule ^akun/user/([A-Za-z0-9-]+)/sunting/$ ekinerja/pages/akun/user_sunting.php?key1=$1 [L]
+	RewriteRule ^akun/pegawai$ ekinerja/pages/akun/pegawai_index.php [L]
+	RewriteRule ^akun/pegawai/$ ekinerja/pages/akun/pegawai_index.php [L]
+	RewriteRule ^akun/pegawai/([A-Za-z0-9-]+)/sunting$ ekinerja/pages/akun/pegawai_sunting.php?key1=$1 [L]
+	RewriteRule ^akun/pegawai/([A-Za-z0-9-]+)/sunting/$ ekinerja/pages/akun/pegawai_sunting.php?key1=$1 [L]
+	
+	#PROFIL#
+	RewriteRule ^profil$ ekinerja/pages/profil/index.php [L]
+	RewriteRule ^profil/$ ekinerja/pages/profil/index.php [L]
+	RewriteRule ^profil/foto$ ekinerja/pages/profil/foto.php [L]
+	RewriteRule ^profil/foto/$ ekinerja/pages/profil/foto.php [L]
+
+	#LOGIN#
+	RewriteRule ^login$ ekinerja/pages/login/index.php [L]
+	RewriteRule ^login/$ ekinerja/pages/login/index.php [L]
+	
+	#KELUAR#
+	RewriteRule ^keluar$ ekinerja/pages/keluar/index.php [L]
+	RewriteRule ^keluar/$ ekinerja/pages/keluar/index.php [L]
+	
+	#Options All -Indexes
+</IfModule>
