@@ -1,0 +1,36 @@
+<?php
+session_start();
+require "../../../../../app/config.php";
+
+$table = 'absen_shift';
+$primaryKey = 'id';
+
+$columns = array(
+    array('db' => 'label', 'dt' => 0),
+	array('db' => 'awal_masuk', 'dt' => 1),
+    array('db' => 'toleransi_masuk', 'dt' => 2),
+    array('db' => 'akhir_masuk', 'dt' => 3),
+    array('db' => 'awal_pulang', 'dt' => 4),
+    array('db' => 'toleransi_pulang', 'dt' => 5),
+    array('db' => 'akhir_pulang', 'dt' => 6),
+    array( 'db' => 'id',
+           'dt' => 7,
+           'formatter' => function ($d) {
+                return '
+                        <a href="'.$d.'/sunting/" title="Sunting" class="btn btn-success btn-xs pull-right" style="margin-right: 2px;"><i class="fa fa-edit"></i></a>
+                       ';
+            }
+         ),
+);
+
+$whereAll = '';
+
+
+
+
+
+// echo json_encode($whereAll);
+
+require '../../../../library/datatables/scripts/ssp.class.php';
+
+echo json_encode(SSP::complex($_GET, $sql_details, $table, $primaryKey, $columns, $whereResult = null, $whereAll));
