@@ -69,7 +69,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
@@ -95,7 +95,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
@@ -121,7 +121,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
@@ -147,7 +147,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
@@ -173,7 +173,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
@@ -199,7 +199,7 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"' + (role == '1' ? "B" : "") + '>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',

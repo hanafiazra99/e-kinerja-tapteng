@@ -19,20 +19,10 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
-        buttons: [{
-            className: 'btn btn-sm btn-primary ',
-            text: 'Tambah Data',
-            action: function (e, dt, node, config) {
-                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/anak/tambah/';
-            },
-            init: function (api, node, config) {
-                $(node).removeClass('btn-default')
-            }
-        }],
     });
 
     table6.columns().every(function () {
