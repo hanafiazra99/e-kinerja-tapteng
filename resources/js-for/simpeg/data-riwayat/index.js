@@ -69,10 +69,20 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
+        buttons: [{
+            className: 'btn btn-sm btn-primary ',
+            text: 'Tambah Data',
+            action: function (e, dt, node, config) {
+                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/riwayat-pgr/tambah/';
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
+        }],
     });
 
     var table2 = $('#daftar_data_2').DataTable({
@@ -85,10 +95,20 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
+        buttons: [{
+            className: 'btn btn-sm btn-primary ',
+            text: 'Tambah Data',
+            action: function (e, dt, node, config) {
+                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/riwayat-kgb/tambah/';
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
+        }],
     });
 
     var table3 = $('#daftar_data_3').DataTable({
@@ -101,10 +121,20 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
+        buttons: [{
+            className: 'btn btn-sm btn-primary ',
+            text: 'Tambah Data',
+            action: function (e, dt, node, config) {
+                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/riwayat-jabatan/tambah/';
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
+        }],
     });
 
     var table4 = $('#daftar_data_4').DataTable({
@@ -117,10 +147,20 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
+        buttons: [{
+            className: 'btn btn-sm btn-primary ',
+            text: 'Tambah Data',
+            action: function (e, dt, node, config) {
+                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/riwayat-pendidikan-umum/tambah/';
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
+        }],
     });
 
     var table5 = $('#daftar_data_5').DataTable({
@@ -133,10 +173,20 @@ $(document).ready(function () {
             [5, 10, 25, 100, "All"]
         ],
         pageLength: 10,
-        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right">>,' +
+        dom: '<"columns row"<"column col-sm-6"l><"column col-sm-6 text-right"B>>,' +
             '<"columns row"<"column col-sm-12"tr>>,' +
             '<"columns row"<"column col-sm-12 text-center"i>>,' +
             '<"columns row"<"column col-sm-12"<"text-center"p>>>',
+        buttons: [{
+            className: 'btn btn-sm btn-primary ',
+            text: 'Tambah Data',
+            action: function (e, dt, node, config) {
+                document.location.href = SIMPEG_URL + 'daftar-pegawai/aparatur-sipil-negara/' + pegawai + '/riwayat-diklat/tambah/';
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
+        }],
     });
 
     table1.columns().every(function () {

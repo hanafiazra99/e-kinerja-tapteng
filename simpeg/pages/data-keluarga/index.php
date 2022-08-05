@@ -20,38 +20,38 @@ $breadcrumb = array();
 <html>
 
 <head>
-	<?php
-template_title(page_title(), BASE_TITLE);
-template_favicon();
-template_meta();
-template_css('app');
-?>
+    <?php
+    template_title(page_title(), BASE_TITLE);
+    template_favicon();
+    template_meta();
+    template_css('app');
+    ?>
 </head>
 
 <body class="hold-transition skin-custom sidebar-mini">
-	<div class="se-pre-con"></div>
-	<div class="wrapper">
-		<?php
-template_header($user_data, $koneksi, SIMPEG_TITLE);
-template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
-?>
+    <div class="se-pre-con"></div>
+    <div class="wrapper">
+        <?php
+        template_header($user_data, $koneksi, SIMPEG_TITLE);
+        template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
+        ?>
 
-		<div class="content-wrapper">
-			<section class="content-header">
-				<h1>
-					<?php
-template_page_header($koneksi, portal_id());
-?>
-				</h1>
-				<ol class="breadcrumb">
-					<?php
-template_breadcrumb($koneksi, portal_id(), $breadcrumb);
-?>
-				</ol>
-			</section>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    <?php
+                    template_page_header($koneksi, portal_id());
+                    ?>
+                </h1>
+                <ol class="breadcrumb">
+                    <?php
+                    template_breadcrumb($koneksi, portal_id(), $breadcrumb);
+                    ?>
+                </ol>
+            </section>
 
-			<section class="content">
-            <div class="box box-blue">
+            <section class="content">
+                <div class="box box-blue">
                     <div class="box-header with-border">
                         <h3 class="box-title">Data Keluarga</h3>
                         <div class="box-tools pull-right">
@@ -102,7 +102,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <?php echo ($_SESSION['role'] == '1' ? '<a href="orang-tua/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                        <a href="<?php echo SIMPEG_URL . 'perubahan-data/data-keluarga/orang-tua/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -140,6 +140,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                         <?php echo ($data_ortu_alamat['kode_pos_i'] != '' ? '' . ucwords(strtolower($data_ortu_alamat['kode_pos_i'])) . '<br>' : ''); ?>
                                                     </td>
                                                 </tr>
+
                                             </table>
                                         </div>
                                     </div>
@@ -181,7 +182,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <?php echo ($_SESSION['role'] == '1' ? '<a href="mertua/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                        <a href="<?php echo SIMPEG_URL . 'perubahan-data/data-keluarga/mertua/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -255,7 +256,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="pasangan/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="<?php echo SIMPEG_URL . 'perubahan-data/data-keluarga/pasangan/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -277,14 +278,14 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                         </div>
                     </div>
                 </div>
-			</section>
-		</div>
-		<?php
-template_footer(SIMPEG_TITLE);
-?>
-	</div>
-	<?php
-echo '
+            </section>
+        </div>
+        <?php
+        template_footer(SIMPEG_TITLE);
+        ?>
+    </div>
+    <?php
+    echo '
 	<script>
 		var role="' . $_SESSION['role'] . '";
 		var pegawai="' . $_SESSION['id'] . '";
@@ -293,9 +294,9 @@ echo '
 		var RESOURCES_URL = "' . RESOURCES_URL . '";
 	</script>
  ';
-template_js();
-echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/data-keluarga/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
-?>
+    template_js();
+    echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/data-keluarga/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
+    ?>
 </body>
 
 </html>

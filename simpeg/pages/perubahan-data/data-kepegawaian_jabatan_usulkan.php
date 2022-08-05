@@ -12,7 +12,7 @@ $user_data = user_data($koneksi);
 check_page_request($_GET['key1'], SIMPEG_URL . 'perubahan-data/jabatan/');
 $data = req_get_where($koneksi, 'pegawai_jabatan', 'id = "' . $_GET['key1'] . '"');
 $data_pegawai = req_get_where($koneksi, 'pegawai', 'id = "' . $_GET['key1'] . '"');
-check_page_request($data['id'], SIMPEG_URL . 'perubahan-data/jabatan/');
+check_page_request($data_pegawai['id'], SIMPEG_URL . 'perubahan-data/jabatan/');
 $breadcrumb = array('Data Pegawai', 'Jabatan', $data_pegawai['nama'], 'Usulkan');
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ $breadcrumb = array('Data Pegawai', 'Jabatan', $data_pegawai['nama'], 'Usulkan')
                             <div class="form-group">
                                 <label for="pejabat_menetapkan" class="col-sm-2 control-label">Pejabat Yang Menetapkan</label>
                                 <div class="col-sm-10">
-                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'];?>" readonly />
+                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data_pegawai['id'];?>" readonly />
                                     <input type="text" class="form-control" id="pym" name="pym" placeholder="Pejabat Yang Menetapkan" value="<?php echo $data['pym']?>" />
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ $breadcrumb = array('Data Pegawai', 'Jabatan', $data_pegawai['nama'], 'Usulkan')
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-sm btn-primary" id="TombolTambahUsulanJabatan" name="TombolTambahUsulanJabatan">Simpan</button>
-                                    <a href="../" class="btn btn-sm btn-default">Batal</a>
+                                    <a href="<?= $_SERVER['HTTP_REFERER'] ?>" class="btn btn-sm btn-default">Batal</a>
                                 </div>
                             </div>
                         </div>

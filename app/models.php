@@ -120,8 +120,8 @@
 		else
 		{
 			$proses = 'fail';
-			// echo $query;
-			// exit;
+			echo $query;
+			exit;
 		}
 		
 		return $proses;

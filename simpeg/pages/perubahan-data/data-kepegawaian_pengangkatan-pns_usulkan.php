@@ -61,7 +61,7 @@ $breadcrumb = array('Data Pegawai', 'Pengangkatan PNS', $data_pegawai['nama'], '
                             <div class="form-group">
                                 <label for="pejabat_menetapkan" class="col-sm-2 control-label">Pejabat Yang Menetapkan</label>
                                 <div class="col-sm-10">
-                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'];?>" readonly />
+                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data_pegawai['id'];?>" readonly />
                                     <input type="text" class="form-control" id="pym" name="pym" placeholder="Pejabat Yang Menetapkan" value="<?php echo $data['pym']?>" />
                                 </div>
                             </div>

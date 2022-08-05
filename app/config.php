@@ -54,7 +54,7 @@ $sql_absensi = array(
 // 	'host' => '203.175.8.130',
 // 	'port' => '3306',
 // );
-error_reporting(0);
+// error_reporting(0);
 $koneksi = new mysqli($sql_details['host'], $sql_details['user'], $sql_details['pass'], $sql_details['db']);
 $koneksi_from = new mysqli($sql_from['host'], $sql_from['user'], $sql_from['pass'], $sql_from['db']);
 $koneksi_absensi = new mysqli($sql_absensi['host'], $sql_absensi['user'], $sql_absensi['pass'], $sql_absensi['db'], $sql_absensi['port']);

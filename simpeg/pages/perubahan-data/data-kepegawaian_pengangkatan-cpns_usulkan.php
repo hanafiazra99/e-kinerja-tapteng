@@ -61,7 +61,7 @@ $breadcrumb = array('Data Pegawai', 'Pengangkatan CPNS', $data_pegawai['nama'], 
                             <div class="form-group">
                                 <label for="no_nota_persetujuan_bkn" class="col-sm-2 control-label">Nota Persetujuan BKN</label>
                                 <div class="col-sm-5">
-                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'];?>" readonly />
+                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data_pegawai['id'];?>" readonly />
                                     <input type="text" class="form-control" id="no_nota_bkn" name="no_nota_bkn" placeholder="Nomor" value="<?php echo $data['no_nota_bkn']?>" />
                                 </div>
                                 <div class="col-sm-5">

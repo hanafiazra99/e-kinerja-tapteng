@@ -13,7 +13,7 @@ check_page_request($_GET['key1'], SIMPEG_URL . 'perubahan-data/data-keluarga/ora
 $data = req_get_where($koneksi, 'pegawai_mertua', 'id = "' . $_GET['key1'] . '"');
 $data_alamat = req_get_where($koneksi, 'pegawai_mertua_alamat', 'id = "' . $_GET['key1'] . '"');
 $data_pegawai = req_get_where($koneksi, 'pegawai', 'id = "' . $_GET['key1'] . '"');
-check_page_request($data['id'], SIMPEG_URL . 'perubahan-data/data-keluarga/orang-tua/');
+check_page_request($data_pegawai['id'], SIMPEG_URL . 'perubahan-data/data-keluarga/orang-tua/');
 $breadcrumb = array('Data Keluarga', 'Mertua', $data_pegawai['nama'], 'Usulkan');
 ?>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ $breadcrumb = array('Data Keluarga', 'Mertua', $data_pegawai['nama'], 'Usulkan')
                             <div class="form-group">
                                 <label for="nama_a" class="col-sm-2 control-label">Nama</label>
                                 <div class="col-sm-10">
-                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'];?>" readonly />
+                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data_pegawai['id'];?>" readonly />
                                     <input type="text" class="form-control" id="nama_a" name="nama_a" placeholder="Nama" value="<?php echo $data['nama_a'];?>" />
                                 </div>
                             </div>

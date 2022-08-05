@@ -178,7 +178,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3">
-                                                        <?php echo ($_SESSION['role'] == '1' ? '<a href="identitas-pegawai/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                        <a href="identitas-pegawai/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -231,7 +231,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="pengangkatan-cpns/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="pengangkatan-cpns/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -271,7 +271,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="pengangkatan-pns/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="pengangkatan-pns/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -332,7 +332,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="jabatan/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="jabatan/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -368,7 +368,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="pgr/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="pgr/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -407,7 +407,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                             <td><?php echo $data_kgb['kantor_pembayaran']; ?></td>
                                         </tr>
                                         <td colspan="2">
-                                            <?php echo ($_SESSION['role'] == '1' ? '<a href="kgb/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                           <a href="kgb/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                         </td>
                                     </table>
                                 </div>
@@ -553,7 +553,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <?php echo ($_SESSION['role'] == '1' ? '<a href="orang-tua/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                        <a href="orang-tua/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -632,7 +632,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <?php echo ($_SESSION['role'] == '1' ? '<a href="mertua/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                       <a href="mertua/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -706,7 +706,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <?php echo ($_SESSION['role'] == '1' ? '<a href="pasangan/sunting/" class="btn btn-sm btn-success">Sunting</a>' : ''); ?>
+                                                <a href="pasangan/sunting/" class="btn btn-sm btn-success">Sunting</a>
                                             </td>
                                         </tr>
                                     </table>

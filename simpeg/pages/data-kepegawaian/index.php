@@ -20,37 +20,37 @@ $breadcrumb = array();
 <html>
 
 <head>
-	<?php
-template_title(page_title(), BASE_TITLE);
-template_favicon();
-template_meta();
-template_css('app');
-?>
+    <?php
+    template_title(page_title(), BASE_TITLE);
+    template_favicon();
+    template_meta();
+    template_css('app');
+    ?>
 </head>
 
 <body class="hold-transition skin-custom sidebar-mini">
-	<div class="se-pre-con"></div>
-	<div class="wrapper">
-		<?php
-template_header($user_data, $koneksi, SIMPEG_TITLE);
-template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
-?>
+    <div class="se-pre-con"></div>
+    <div class="wrapper">
+        <?php
+        template_header($user_data, $koneksi, SIMPEG_TITLE);
+        template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
+        ?>
 
-		<div class="content-wrapper">
-			<section class="content-header">
-				<h1>
-					<?php
-template_page_header($koneksi, portal_id());
-?>
-				</h1>
-				<ol class="breadcrumb">
-					<?php
-template_breadcrumb($koneksi, portal_id(), $breadcrumb);
-?>
-				</ol>
-			</section>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    <?php
+                    template_page_header($koneksi, portal_id());
+                    ?>
+                </h1>
+                <ol class="breadcrumb">
+                    <?php
+                    template_breadcrumb($koneksi, portal_id(), $breadcrumb);
+                    ?>
+                </ol>
+            </section>
 
-			<section class="content">
+            <section class="content">
                 <div class="box box-blue">
                     <div class="box-header with-border">
                         <h3 class="box-title">Data Kepegawaian</h3>
@@ -91,7 +91,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK</th>
                                             <td>
-                                                <?php echo ($data_pengangkatan_cpns['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_pengangkatan_cpns['file_sk'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_pengangkatan_cpns['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_pengangkatan_cpns['file_sk'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -105,6 +105,10 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>TMT CPNS</th>
                                             <td><?php echo content_tgl_indo($data_pengangkatan_cpns['tmt']); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="<?php echo SIMPEG_URL . 'perubahan-data/data-kepegawaian/pengangkatan-cpns/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a></td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -126,7 +130,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK</th>
                                             <td>
-                                                <?php echo ($data_pengangkatan_pns['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_pengangkatan_pns['file_sk'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_pengangkatan_pns['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_pengangkatan_pns['file_sk'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -140,6 +144,10 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Sumpah/Janji PNS</th>
                                             <td><?php echo $data_pengangkatan_pns['sumpah']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="<?php echo SIMPEG_URL . 'perubahan-data/data-kepegawaian/pengangkatan-pns/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a></td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -161,7 +169,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK Jabatan</th>
                                             <td>
-                                                <?php echo ($data_jabatan['file_sk_jabatan'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_jabatan['file_sk_jabatan'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_jabatan['file_sk_jabatan'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_jabatan['file_sk_jabatan'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -190,12 +198,16 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK Pelantikan</th>
                                             <td>
-                                                <?php echo ($data_jabatan['file_sk_pelantikan'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_jabatan['file_sk_pelantikan'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_jabatan['file_sk_pelantikan'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_jabatan['file_sk_pelantikan'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Sumpah Jabatan</th>
                                             <td><?php echo $data_jabatan['sumpah']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="<?php echo SIMPEG_URL . 'perubahan-data/data-kepegawaian/jabatan/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a></td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -217,7 +229,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK</th>
                                             <td>
-                                                <?php echo ($data_pgr['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_pgr['file_sk'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_pgr['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_pgr['file_sk'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -227,6 +239,10 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>TMT</th>
                                             <td><?php echo content_tgl_indo($data_pgr['tmt']); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="<?php echo SIMPEG_URL . 'perubahan-data/data-kepegawaian/pgr/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a></td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -248,7 +264,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                         <tr>
                                             <th>Dokumen SK</th>
                                             <td>
-                                                <?php echo ($data_kgb['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="'.RESOURCES_URL.'dokumen/'.$_SESSION['id'].'/'.$data_kgb['file_sk'].'" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
+                                                <?php echo ($data_kgb['file_sk'] != '' ? '<TombolLihatFile judul="Dokumen SK" file="' . RESOURCES_URL . 'dokumen/' . $_SESSION['id'] . '/' . $data_kgb['file_sk'] . '" class="btn btn-primary btn-sm">Lihat</TombolLihatFile>' : 'Tidak Ada'); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -263,20 +279,24 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                             <th>Kantor Pembayaran Gaji</th>
                                             <td><?php echo $data_kgb['kantor_pembayaran']; ?></td>
                                         </tr>
+                                        <tr>
+                                            <td><a href="<?php echo SIMPEG_URL . 'perubahan-data/data-kepegawaian/kgb/' . $_SESSION['id'] . '/usulkan/' ?>" class="btn btn-sm btn-success">Sunting</a></td>
+                                            <td></td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-			</section>
-		</div>
-		<?php
-template_footer(SIMPEG_TITLE);
-?>
-	</div>
-	<?php
-echo '
+            </section>
+        </div>
+        <?php
+        template_footer(SIMPEG_TITLE);
+        ?>
+    </div>
+    <?php
+    echo '
 	<script>
 		var role="' . $_SESSION['role'] . '";
 		var user_opd="' . $user_data['opd_id'] . '";
@@ -285,9 +305,9 @@ echo '
 		var RESOURCES_URL = "' . RESOURCES_URL . '";
 	</script>
  ';
-template_js();
-echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/data-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
-?>
+    template_js();
+    echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/data-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
+    ?>
 </body>
 
 </html>

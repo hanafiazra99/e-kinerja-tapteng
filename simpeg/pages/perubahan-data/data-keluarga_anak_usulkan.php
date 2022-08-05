@@ -10,8 +10,9 @@ require "../../controllers/c-perubahan-data.php";
 cek_session();
 $user_data = user_data($koneksi);
 check_page_request($_GET['key1'], SIMPEG_URL . 'perubahan-data/data-keluarga/anak/');
+$data_pegawai = req_get_where($koneksi, 'pegawai', 'id = "' . $_GET['key1'] . '"');
 $data = req_get_where($koneksi, 'pegawai_anak', 'id = "' . $_GET['key1'] . '"');
-check_page_request($data['id'], SIMPEG_URL . 'perubahan-data/data-keluarga/anak/');
+check_page_request($data_pegawai['id'], SIMPEG_URL . 'perubahan-data/data-keluarga/anak/');
 $breadcrumb = array('Data Keluarga', 'Anak', $data['nama'], 'Usulkan');
 ?>
 <!DOCTYPE html>
