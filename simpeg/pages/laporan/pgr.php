@@ -61,6 +61,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                     <th>Nama</th>
                                     <th>Status Kepegawaian</th>
                                     <th>OPD</th>
+									<th>Jenis Kelamin</th>
                                     <th>Pangkat Golongan Ruang</th>
                                 </tr>
                             </thead>

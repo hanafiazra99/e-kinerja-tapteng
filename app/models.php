@@ -6,6 +6,15 @@
 		
 		return $conn;
 	}
+
+	function fetch_all($koneksi,$query){
+		$collection = array();
+		$conn = mysqli_query($koneksi, $query);
+		while($data = mysqli_fetch_array($conn)){
+			$collection[] = $data;
+		}
+		return $collection;
+	}
 	
 	function req_function($koneksi,$func){
 		$query = "select ".$func." as data";
@@ -120,8 +129,7 @@
 		else
 		{
 			$proses = 'fail';
-			echo $query;
-			exit;
+			
 		}
 		
 		return $proses;

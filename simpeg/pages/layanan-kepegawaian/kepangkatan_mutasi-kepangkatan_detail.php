@@ -19,33 +19,33 @@ $breadcrumb = array('Kepangkatan', 'Mutasi Kepangkatan', $data['no_sk']);
 <html>
 
 <head>
-<?php
-template_title(page_title(), BASE_TITLE);
-template_favicon();
-template_meta();
-template_css('app');
-?>
+    <?php
+    template_title(page_title(), BASE_TITLE);
+    template_favicon();
+    template_meta();
+    template_css('app');
+    ?>
 </head>
 
 <body class="hold-transition skin-custom sidebar-mini">
     <div class="se-pre-con"></div>
     <div class="wrapper">
-<?php
-template_header($user_data, $koneksi, SIMPEG_TITLE);
-template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
-?>
+        <?php
+        template_header($user_data, $koneksi, SIMPEG_TITLE);
+        template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
+        ?>
 
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
                     <?php
-template_page_header($koneksi, portal_id());
-?>
+                    template_page_header($koneksi, portal_id());
+                    ?>
                 </h1>
                 <ol class="breadcrumb">
                     <?php
-template_breadcrumb($koneksi, portal_id(), $breadcrumb);
-?>
+                    template_breadcrumb($koneksi, portal_id(), $breadcrumb);
+                    ?>
                 </ol>
             </section>
 
@@ -149,66 +149,66 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                     </div>
                 </div>
 
-<?php
-if ($data['status'] == 'Diperiksa') {
-    ?>
-                <div class="box box-blue">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Form Verifikasi</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <?php
+                if ($data['status'] == 'Diperiksa') {
+                ?>
+                    <div class="box box-blue">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Form Verifikasi</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            </div>
                         </div>
+                        <form class="form-horizontal" id="FormVerifikasiMutasiKepangkatan" method="post" action="<?php echo SIMPEG_URL; ?>controllers/c-layanan-kepegawaian.php" enctype="multipart/form-data">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="persetujuan_paraf" class="col-sm-2 control-label">Tindakan</label>
+                                    <div class="col-sm-10">
+                                        <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'] ?>" readonly />
+                                        <select class="select2 form-control" name="tindakan" id="tindakan" data-placeholder="Tindakan">
+                                            <option></option>
+                                            <option value="Setuju">Setuju</option>
+                                            <option value="Tidak Setuju">Tidak Setuju</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group container_alasan" style="display: none;">
+                                    <label for="alasan" class="col-sm-2 control-label">Alasan</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" name="alasan" name="alasan"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10">
+                                        <input type="checkbox" name="check_form" id="check_form" value="y" class="flat-red" /> <i>Saya sudah mengisi data semua data dengan benar</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="form-group">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-sm btn-primary" id="TombolVerifikasiMutasiKepangkatan" name="TombolVerifikasiMutasiKepangkatan">Simpan</button>
+                                        <a href="../" class="btn btn-sm btn-default">Batal</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <form class="form-horizontal" id="FormVerifikasiMutasiKepangkatan" method="post" action="<?php echo SIMPEG_URL; ?>controllers/c-layanan-kepegawaian.php" enctype="multipart/form-data">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="persetujuan_paraf" class="col-sm-2 control-label">Tindakan</label>
-                                <div class="col-sm-10">
-                                    <input type="hidden" class="form-control" id="id" name="id" placeholder="" value="<?php echo $data['id'] ?>" readonly />
-                                    <select class="select2 form-control" name="tindakan" id="tindakan" data-placeholder="Tindakan">
-                                        <option></option>
-                                        <option value="Setuju">Setuju</option>
-                                        <option value="Tidak Setuju">Tidak Setuju</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group container_alasan" style="display: none;">
-                                <label for="alasan" class="col-sm-2 control-label">Alasan</label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" name="alasan" name="alasan"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="" class="col-sm-2 control-label"></label>
-                                <div class="col-sm-10">
-                                    <input type="checkbox" name="check_form" id="check_form" value="y" class="flat-red" /> <i>Saya sudah mengisi data semua data dengan benar</i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="form-group">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-sm btn-primary" id="TombolVerifikasiMutasiKepangkatan" name="TombolVerifikasiMutasiKepangkatan">Simpan</button>
-                                    <a href="../" class="btn btn-sm btn-default">Batal</a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-<?php
-}
-?>
+                <?php
+                }
+                ?>
             </section>
         </div>
         <?php
-template_footer(SIMPEG_TITLE);
-?>
+        template_footer(SIMPEG_TITLE);
+        ?>
     </div>
     <?php
-echo '
+    echo '
             <script>
                 var role="' . $_SESSION['role'] . '";
                 var user_opd="' . $user_data['opd'] . '";
@@ -217,9 +217,9 @@ echo '
                 var RESOURCES_URL = "' . RESOURCES_URL . '";
             </script>
          ';
-template_js();
-echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/layanan-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
-?>
+    template_js();
+    echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/layanan-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
+    ?>
 </body>
 
 </html>

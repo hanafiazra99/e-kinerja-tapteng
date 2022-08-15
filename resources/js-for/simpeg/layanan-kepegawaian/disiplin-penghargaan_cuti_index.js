@@ -32,6 +32,15 @@ $(document).ready(function () {
             init: function (api, node, config) {
                 $(node).removeClass('btn-default')
             }
+        },{
+            className: 'btn btn-sm btn-info ml-5 ',
+            text: 'Download Format',
+            action: function (e, dt, node, config) {
+                document.location.href = RESOURCES_URL+"dokumen/format/format-permohonan.docx";
+            },
+            init: function (api, node, config) {
+                $(node).removeClass('btn-default')
+            }
         }],
     });
 

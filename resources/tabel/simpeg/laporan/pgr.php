@@ -10,7 +10,8 @@ $columns = array(
 	array('db' => 'nama', 'dt' => 1),
     array('db' => 'status_kepegawaian', 'dt' => 2),
     array('db' => 'opd', 'dt' => 3),
-    array('db' => 'pgr', 'dt' => 4),
+    array('db' => 'jenis_kelamin', 'dt' => 4),
+    array('db' => 'pgr', 'dt' => 5),
 );
 
 $whereAll = '';

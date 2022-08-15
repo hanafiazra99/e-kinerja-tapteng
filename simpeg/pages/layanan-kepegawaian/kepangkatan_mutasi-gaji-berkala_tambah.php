@@ -1,4 +1,7 @@
 <?php
+
+use Mpdf\Tag\P;
+
 session_start();
 require "../../../app/config.php";
 require "../../../app/models.php";
@@ -10,6 +13,14 @@ require "../../controllers/c-layanan-kepegawaian.php";
 cek_session();
 $user_data = user_data($koneksi);
 $breadcrumb = array('Kepangkatan', 'Mutasi Gaji Berkala', 'Tambah');
+
+if(!isset($_GET['usulan-pegawai'])){
+    $_GET['usulan-pegawai']  = '';
+    $opd_pegawai = '';
+}else{
+    $opd_pegawai = req_get_where($koneksi,'cv_asn',' id ="'.$_GET['usulan-pegawai'].'"');
+    $opd_pegawai = $opd_pegawai['opd_id'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,7 +71,7 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                                 <div class="col-sm-10">
                                     <input type="hidden" class="form-control" name="konfirmasi" id="konfirmasi" value="<?php echo ($_SESSION['akses'] == '10' ? 'Menunggu Verifikasi' : 'Disetujui') ?>">
 <?php
-echo component_select_option_where($koneksi, 'opd', 'id', 'nama', 'opd', 'Pilih OPD', '', ($_SESSION['role'] == '1' ? 'id != ""' : 'id = "' . $user_data['opd_id'] . '"'));
+echo component_select_option_where($koneksi, 'opd', 'id', 'nama', 'opd', 'Pilih OPD', $opd_pegawai, ($_SESSION['role'] == '1' ? 'id != ""' : 'id = "' . $user_data['opd_id'] . '"'));
 ?>
                                 </div>
                             </div>
@@ -68,7 +79,7 @@ echo component_select_option_where($koneksi, 'opd', 'id', 'nama', 'opd', 'Pilih 
                                 <label for="sumber" class="col-sm-2 control-label">Pegawai</label>
                                 <div class="col-sm-10">
 <?php
-echo component_select_option_where($koneksi, 'pegawai', 'id', 'nama', 'pegawai', 'Pegawai', '', "id = ''");
+echo component_select_option_where($koneksi, 'pegawai', 'id', 'nama', 'pegawai', 'Pegawai', $_GET['usulan-pegawai'], "id = '".$_GET['usulan-pegawai']."'");
 ?>
                                 </div>
                             </div>

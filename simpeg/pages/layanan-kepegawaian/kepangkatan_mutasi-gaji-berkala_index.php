@@ -15,37 +15,58 @@ $breadcrumb = array('Kepangkatan', 'Mutasi Gaji Berkala');
 <html>
 
 <head>
-<?php
-template_title(page_title(), BASE_TITLE);
-template_favicon();
-template_meta();
-template_css('app');
-?>
+    <?php
+    template_title(page_title(), BASE_TITLE);
+    template_favicon();
+    template_meta();
+    template_css('app');
+    ?>
 </head>
 
 <body class="hold-transition skin-custom sidebar-mini">
     <div class="se-pre-con"></div>
     <div class="wrapper">
-<?php
-template_header($user_data, $koneksi, SIMPEG_TITLE);
-template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
-?>
+        <?php
+        template_header($user_data, $koneksi, SIMPEG_TITLE);
+        template_navigasi(page_title(), $koneksi, 'simpeg', SIMPEG_URL);
+        ?>
 
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
                     <?php
-template_page_header($koneksi, portal_id());
-?>
+                    template_page_header($koneksi, portal_id());
+                    ?>
                 </h1>
                 <ol class="breadcrumb">
                     <?php
-template_breadcrumb($koneksi, portal_id(), $breadcrumb);
-?>
+                    template_breadcrumb($koneksi, portal_id(), $breadcrumb);
+                    ?>
                 </ol>
             </section>
 
             <section class="content">
+                <div class="box box-blue">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Daftar Data Usulan Mutasi Gaji Berkala</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="daftar_data_2" style="width: 100%;" class="table table-bordered table-fix-last">
+                            <thead>
+                                <tr class="bg-custom">
+                                    <th>NIP</th>
+                                    <th>Nama</th>
+                                    <th>Masa Kerja Golongan</th>
+                                    <th>Pejabat Menetapkan</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
                 <div class="box box-blue">
                     <div class="box-header with-border">
                         <h3 class="box-title">Daftar Data</h3>
@@ -67,15 +88,17 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                             </thead>
                         </table>
                     </div>
+
                 </div>
+
             </section>
         </div>
         <?php
-template_footer(SIMPEG_TITLE);
-?>
+        template_footer(SIMPEG_TITLE);
+        ?>
     </div>
     <?php
-echo '
+    echo '
             <script>
                 var role="' . $_SESSION['role'] . '";
                 var user_opd="' . $user_data['opd'] . '";
@@ -84,9 +107,9 @@ echo '
                 var RESOURCES_URL = "' . RESOURCES_URL . '";
             </script>
          ';
-template_js();
-echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/layanan-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
-?>
+    template_js();
+    echo '<script src="' . RESOURCES_URL . 'js-for/simpeg/layanan-kepegawaian/' . basename($_SERVER['PHP_SELF'], '.php') . '.js"></script>';
+    ?>
 </body>
 
 </html>

@@ -530,9 +530,12 @@ if (isset($_POST['TombolTambahMutasiGajiBerkala'])) {
         $data1 = req_get_where($koneksi, 'simpeg_lp_mutasi_kgb', 'id = "' . $_POST['id'] . '"');
         $data2 = req_get_where($koneksi, 'pegawai_kgb', 'id = "' . $data1['pegawai'] . '"');
 
-        $data = array($id_riwayat, $data2['id'], $data2['pym'], $data2['no_sk'], $data2['tgl_sk'], $data2['tmt'], $data2['masa_kerja'], $data2['kantor_pembayaran'], $data2['file_sk']);
-        $field = array('id', 'pegawai', 'pym', 'no_sk', 'tgl_sk', 'tmt', 'masa_kerja', 'kantor_pembayaran', 'file_sk');
-        array_push($proses_check, submit_data($koneksi, $data, $field, 'pegawai_riwayat_kgb'));
+        if(!empty($data2)){
+            $data = array($id_riwayat, $data2['id'], $data2['pym'], $data2['no_sk'], $data2['tgl_sk'], $data2['tmt'], $data2['masa_kerja'], $data2['kantor_pembayaran'], $data2['file_sk']);
+            $field = array('id', 'pegawai', 'pym', 'no_sk', 'tgl_sk', 'tmt', 'masa_kerja', 'kantor_pembayaran', 'file_sk');
+            array_push($proses_check, submit_data($koneksi, $data, $field, 'pegawai_riwayat_kgb'));
+        }
+        
 
         $data = array($data1['pegawai'], $data1['pym'], $data1['no_sk'], $data1['tgl_sk'], $data1['tmt'], $data1['masa_kerja'], $data1['kantor_pembayaran'], $data1['file_sk']);
         $field = array('id', 'pym', 'no_sk', 'tgl_sk', 'tmt', 'masa_kerja', 'kantor_pembayaran', 'file_sk');
@@ -544,7 +547,7 @@ if (isset($_POST['TombolTambahMutasiGajiBerkala'])) {
     }
 
     if (!in_array("fail", $proses_check)) {
-        pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/kepangkatan/mutasi-gaji-berkala/' . $_POST['id'] . '/', 'Berhasil', 'Berhasil memverifikasi data.', 'modal-success');
+        pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/kepangkatan/mutasi-gaji-berkala/' . $_POST['id'] . '/cetak-pdf', 'Berhasil', 'Berhasil memverifikasi data.', 'modal-success');
     } else {
         pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/kepangkatan/mutasi-gaji-berkala/' . $_POST['id'] . '/', 'Gagal', 'Terjadi kesalahan pada sistem, laporkan ini pada pihak pengembang.', 'modal-danger');
     }
@@ -1091,8 +1094,8 @@ if (isset($_POST['TombolTambahCuti'])) {
         $file_sk = '';
     }
 
-    $data = array($id, $_POST['opd'], $_POST['pegawai'], $_POST['lama'], $_POST['tgl_mulai'], $_POST['tgl_selesai'], $_POST['pyb'], $_POST['no_sk'], $_POST['tgl_sk'], $file_sk, $_POST['keterangan'], date("Y-m-d H:i:s"), 'Dikirim');
-    $field = array('id', 'opd_asal', 'pegawai', 'lama', 'tgl_mulai', 'tgl_selesai', 'pyb', 'no_sk', 'tgl_sk', 'file_sk', 'keterangan', 'ts', 'status');
+    $data = array($id, $_POST['opd'], $_POST['pegawai'], $_POST['jenis_cuti'], $_POST['tgl_mulai'], $_POST['tgl_selesai'], $_POST['pyb'], $_POST['no_sk'], date("Y-m-d"), $file_sk, $_POST['keterangan'], date("Y-m-d H:i:s"), 'Dikirim');
+    $field = array('id', 'opd_asal', 'pegawai', 'jenis_cuti', 'tgl_mulai', 'tgl_selesai', 'pyb', 'no_sk', 'tgl_sk', 'file_sk', 'keterangan', 'ts', 'status');
     array_push($proses_check, submit_data($koneksi, $data, $field, 'simpeg_lp_cuti'));
 
     if (!in_array("fail", $proses_check)) {
@@ -1129,7 +1132,7 @@ if (isset($_POST['TombolTambahCuti'])) {
     }
 
     if (!in_array("fail", $proses_check)) {
-        pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/disiplin-penghargaan/cuti/' . $_POST['id'] . '/', 'Berhasil', 'Berhasil memverifikasi data.', 'modal-success');
+        pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/disiplin-penghargaan/cuti/'. $_POST['id'].'/cetak-pdf'  . '/', 'Berhasil', 'Berhasil memverifikasi data.', 'modal-success');
     } else {
         pop_up_direct(BASE_URL, SIMPEG_URL . 'layanan-kepegawaian/disiplin-penghargaan/cuti/' . $_POST['id'] . '/', 'Gagal', 'Terjadi kesalahan pada sistem, laporkan ini pada pihak pengembang.', 'modal-danger');
     }

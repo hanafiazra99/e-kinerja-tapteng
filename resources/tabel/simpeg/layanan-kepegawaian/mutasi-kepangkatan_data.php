@@ -32,7 +32,7 @@ $columns = array(
 $whereAll = '';
 
 if (isset($_GET['opd'])) {
-    $whereAll .= 'opd = "' . $_GET['opd'] . '"';
+    $whereAll .= 'opd_asal_nama = "' . $_GET['opd'] . '"';
 }
 
 require '../../../library/datatables/scripts/ssp.class.php';
