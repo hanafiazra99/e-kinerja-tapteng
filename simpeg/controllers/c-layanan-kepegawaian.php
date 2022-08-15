@@ -422,7 +422,7 @@ if (isset($_POST['TombolTambahMutasiKepangkatan'])) {
     $data_p = req_get_where($koneksi, 'pegawai', 'id = "' . $_POST['pegawai'] . '"');
     $data_q = req_get_where($koneksi, 'pegawai_jabatan', 'id = "' . $_POST['pegawai'] . '"');
     $data = array($id, $data_p['opd'], $_POST['pegawai'], $data_q['nama_jabatan'], $_POST['pym'], $_POST['no_sk'], $_POST['tgl_sk'], $_POST['pgr'], $_POST['tmt'], $file_sk, date("Y-m-d H:i:s"), 'Dikirim');
-    $field = array('id', 'opd_asal', 'pegawai', 'jabatan', 'pym', 'no_sk', 'tgl_sk', 'pgr', 'tmt', 'file_sk', 'ts', 'status');
+    $field = array('id', 'opd_asal', 'pegawai', 'jabatan', 'pym', 'tgl_sk', 'pgr', 'tmt', 'file_sk', 'ts', 'status');
     array_push($proses_check, submit_data($koneksi, $data, $field, 'simpeg_lp_mutasi_pgr'));
 
     if (!in_array("fail", $proses_check)) {
@@ -500,8 +500,8 @@ if (isset($_POST['TombolTambahMutasiGajiBerkala'])) {
 
     $masa_kerja = ($_POST['masa_kerja_tahun'] * 12) + $_POST['masa_kerja_bulan'];
     $data_p = req_get_where($koneksi, 'pegawai', 'id = "' . $_POST['pegawai'] . '"');
-    $data = array($id, $data_p['opd'], $_POST['pegawai'], $_POST['pym'], $_POST['no_sk'], $_POST['tgl_sk'], $_POST['tmt'], $masa_kerja, $_POST['kantor_pembayaran'], $file_sk, date("Y-m-d H:i:s"), 'Dikirim');
-    $field = array('id', 'opd_asal', 'pegawai', 'pym', 'no_sk', 'tgl_sk', 'tmt', 'masa_kerja', 'kantor_pembayaran', 'file_sk', 'ts', 'status');
+    $data = array($id, $data_p['opd'], $_POST['pegawai'], $_POST['pym'],$_POST['nama_pym'],$_POST['nip_pym'], $_POST['no_sk'], $_POST['tgl_sk'], $_POST['tmt'], $masa_kerja, $_POST['kantor_pembayaran'], $file_sk, date("Y-m-d H:i:s"), 'Dikirim');
+    $field = array('id', 'opd_asal', 'pegawai', 'pym', 'nama_pym','nip_pym', 'no_sk', 'tgl_sk', 'tmt', 'masa_kerja', 'kantor_pembayaran', 'file_sk', 'ts', 'status');
     array_push($proses_check, submit_data($koneksi, $data, $field, 'simpeg_lp_mutasi_kgb'));
 
     if (!in_array("fail", $proses_check)) {
@@ -1094,8 +1094,8 @@ if (isset($_POST['TombolTambahCuti'])) {
         $file_sk = '';
     }
 
-    $data = array($id, $_POST['opd'], $_POST['pegawai'], $_POST['jenis_cuti'], $_POST['tgl_mulai'], $_POST['tgl_selesai'], $_POST['pyb'], $_POST['no_sk'], date("Y-m-d"), $file_sk, $_POST['keterangan'], date("Y-m-d H:i:s"), 'Dikirim');
-    $field = array('id', 'opd_asal', 'pegawai', 'jenis_cuti', 'tgl_mulai', 'tgl_selesai', 'pyb', 'no_sk', 'tgl_sk', 'file_sk', 'keterangan', 'ts', 'status');
+    $data = array($id, $_POST['opd'], $_POST['pegawai'], $_POST['jenis_cuti'], $_POST['tgl_mulai'], $_POST['tgl_selesai'], $_POST['pyb'],$_POST['nama_pyb'],$_POST['nip_pyb'], $_POST['no_sk'], date("Y-m-d"), $file_sk, $_POST['keterangan'], date("Y-m-d H:i:s"), 'Dikirim');
+    $field = array('id', 'opd_asal', 'pegawai', 'jenis_cuti', 'tgl_mulai', 'tgl_selesai', 'pyb','nama_pyb','nip_pyb','no_sk', 'tgl_sk', 'file_sk', 'keterangan', 'ts', 'status');
     array_push($proses_check, submit_data($koneksi, $data, $field, 'simpeg_lp_cuti'));
 
     if (!in_array("fail", $proses_check)) {

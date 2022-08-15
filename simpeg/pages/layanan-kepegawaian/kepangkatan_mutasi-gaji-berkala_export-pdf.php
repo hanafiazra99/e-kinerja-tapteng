@@ -129,7 +129,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . content_tgl_indo($data_asn['tgl_lahir']) . '
                         </td></tr>
                         <tr>
                             <td>
@@ -142,6 +142,7 @@ $content = '<!DOCTYPE html>
                             :
                             </td>
                             <td>
+                            ' . $data['pgr'] . '
                         </td></tr>
                         <tr>
                             <td>
@@ -165,7 +166,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>
                         </td></tr>
                         <tr>
                             <td>
@@ -177,7 +178,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . content_tgl_indo($data['gaji']) . '
                         </td></tr>
                         <tr>
                             <td>
@@ -189,7 +190,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . (floor($data['masa_kerja'] / 12)) . " Tahun " . ($data['masa_kerja'] % 12) . ' Bulan
                         </td></tr>
                         <tr>
                             <td>
@@ -201,7 +202,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . $data['pgr'] . '
                         </td></tr>
                         <tr>
                             <td>
@@ -213,7 +214,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . content_tgl_indo($data['tmt']) . '
                         </td></tr>
                         <tr>
                             <td>
@@ -225,7 +226,7 @@ $content = '<!DOCTYPE html>
                             <td>
                             :
                             </td>
-                            <td>' . content_tgl_indo($pegawai['tgl_lahir']) . '
+                            <td>' . content_tgl_indo(date('Y-m-d', strtotime('+2 years', strtotime($data['tmt'])))) . '
                         </td></tr>
                     </table><br>
 
@@ -237,16 +238,15 @@ $content = '<!DOCTYPE html>
             <tr>
             <td style="width:55%"></td>
             <td> Pandan, ' . content_tgl_indo($data['tgl_sk']) . '<br>
-                KEPALA BADAN KEPEGAWAIAN DAERAH <br>
+                ' . $data['pym'] . ' <br>
                 TAPANULI TENGAH<br><br><br><br><br><br>
 
 
 
 
 
-                YETTY SEMBIRING, S.STP, MM<br>
-                PEMBINA <br>
-                NIP. 19790528 199803 2 003<br>
+                ' . $data['nama_pym'] . '<br>
+                NIP. ' . $data['nip_pym'] . '<br>
 
             </td>
             </tr>

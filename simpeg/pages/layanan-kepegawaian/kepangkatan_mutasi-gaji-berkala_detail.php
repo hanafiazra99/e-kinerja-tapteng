@@ -88,6 +88,11 @@ template_breadcrumb($koneksi, portal_id(), $breadcrumb);
                             </div>
                             <div class="box-footer">
                                 <a <?Php echo ($data['status'] == 'Disetujui' ? 'style="display:none;"' : '') ?> href="sunting/" class="btn btn-sm btn-success">Sunting</a>
+                                <?php
+                                if($data['status'] == 'Disetujui'){
+                                   echo  '<a href="cetak-pdf" class="btn btn-sm btn-primary">Cetak Surat Keputusan</a>';
+                                }
+                                ?>
                                 <TombolHapus judul="Hapus Mutasi Jabatan" formreq="HapusMutasiGajiBerkala" pertanyaan="Anda yakin ingin menghapus data mutasi ini?<br>Menghapus data akan mengembalikan data sebelumnya, jika status data sudah <b>Disetujui</b>." parameter="id" value="<?php echo $data['id'] ?>" class="btn btn-sm btn-danger">Hapus</TombolHapus>
                                 <a href="../" class="btn btn-sm btn-default">Kembali</a>
                             </div>

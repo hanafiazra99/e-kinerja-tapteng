@@ -90,6 +90,18 @@ echo component_select_option_where($koneksi, 'pegawai', 'id', 'nama', 'pegawai',
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="pejabat_menetapkan" class="col-sm-2 control-label">Nama Pejabat Yang Menetapkan</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="nama_pym" name="nama_pym" placeholder="Nama Pejabat Yang Menetapkan" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pejabat_menetapkan" class="col-sm-2 control-label">NIP Pejabat Yang Menetapkan</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="nip_pym" name="nip_pym" placeholder="NIP Pejabat Yang Menetapkan" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="sk_pns" class="col-sm-2 control-label">Surat Keputusan</label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" id="no_sk" name="no_sk" placeholder="Nomor" value="" />

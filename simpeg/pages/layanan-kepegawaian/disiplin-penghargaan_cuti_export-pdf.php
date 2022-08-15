@@ -201,16 +201,15 @@ $content = '<!DOCTYPE html>
         <tr>
         <td style="width:55%"></td>
         <td> Pandan, ' . content_tgl_indo($data['tgl_mulai']) . '<br>
-            KEPALA BADAN KEPEGAWAIAN DAERAH <br>
+            '.$data['pyb'].' <br>
             TAPANULI TENGAH<br><br><br><br><br><br>
 
 
 
 
 
-            YETTY SEMBIRING, S.STP, MM<br>
-            PEMBINA <br>
-            NIP. 19790528 199803 2 003<br>
+            '.$data['nama_pyb'].'<br>
+            NIP. '.$data['nip_pyb'].'<br>
 
         </td>
         </tr>
